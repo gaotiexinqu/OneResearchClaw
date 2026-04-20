@@ -2,8 +2,10 @@
   <img src="docs/assets/logo.png" alt="OneResearchClaw Header" width="95%">
 </p>
 
+<h2 align="center"><b>Start Any Research in One Claw. 🦞</b></h2>
+
 <p align="center">
-  <strong>Any research. One Claw. 🦞 </strong><br>
+  <strong>From real materials to reports with a fully autonomous & skill-driven researcher.</strong>
 </p>
 
 ---
@@ -576,14 +578,14 @@ user feedback → patch proposal → validation gate → derived skill set
 
 ## 🙏 Acknowledgements
 
-OneResearchClaw is inspired by several excellent open-source projects and skill-based workflow practices:
+OneResearchClaw 的灵感来源于多个优秀的开源项目以及基于技能的工作流实践，包括：
 
 - [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
 - [Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)
 - [A-Evolve](https://github.com/A-EVO-Lab/a-evolve)
 - [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
 
-We thank the authors and maintainers of these projects for sharing their work with the open-source community.
+我们感谢这些项目的作者和维护者与开源社区分享他们的成果。
 
 ---
 
@@ -595,7 +597,7 @@ MIT — see [LICENSE](LICENSE) for details.
 
 ## 📌 Citation
 
-If you find OneResearchClaw helpful, consider cite us:
+如果你觉得 OneResearchClaw 对你有帮助，欢迎引用我们的工作：
 
 ```bibtex
 @misc{OneResearchClaw2026,
