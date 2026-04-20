@@ -24,7 +24,7 @@ It supports starting from meeting audio/video, documents, tables, PPT files, ZIP
   <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+"></a>
   <a href="https://github.com/gaotiexinqu/OneResearchClaw"><img src="https://img.shields.io/badge/GitHub-OneResearchClaw-181717?logo=github" alt="GitHub"></a>
   <a href="https://github.com/gaotiexinqu/OneResearchClaw#-citation"><img src="https://img.shields.io/badge/Cite-OneResearchClaw-orange?logo=readme&logoColor=white" alt="Citation"></a>
-  <a href="https://github.com/gaotiexinqu/OneResearchClaw#star-history"><img src="https://img.shields.io/badge/Star_History-⭐-blue?logo=github" alt="⭐ Star History"></a>
+  <a href="https://github.com/gaotiexinqu/OneResearchClaw#-star-history"><img src="https://img.shields.io/badge/Star_History-⭐-blue?logo=github" alt="⭐ Star History"></a>
 </p>
 
 <p align="center">
