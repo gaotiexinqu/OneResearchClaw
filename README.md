@@ -20,7 +20,7 @@ It supports starting from meeting audio/video, documents, tables, PPT files, ZIP
 
 <p align="center">
   <a href="./README_CH.md"><b>🌐 中文 README</b></a> ·
-  <a href="https://weiyang209.github.io/any2one/"><b>🖥️ Project Page</b></a> ·
+  <a href="https://weiyang209.github.io/OneResearchClaw/"><b>🖥️ Project Page</b></a> ·
   <a href="#-showcase"><b>🎬 Showcase</b></a> ·
   <a href="#-quick-start"><b>🚀 Quick Start</b></a> ·
   <a href="#-skills-catalog"><b>🧩 Skills Catalog</b></a>
