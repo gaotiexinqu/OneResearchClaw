@@ -611,7 +611,7 @@ If you find OneResearchClaw helpful, consider cite us:
 ```bibtex
 @misc{OneResearchClaw2026,
   author       = {Yang, Wei* and Zhao, Yiming* and Zeng, Yu* and Fang, Zhen* and Huang, Wenxuan and Zhang, Ziao and Shi, Kou and Miao, Qing and Zhao, Jiawei and Chen, Lin and Chen, Zehui and Bao, Xikun},
-  title        = {OneResearchClaw: Fully Autonomous, Skill-Driven Research Synthesis from Heterogeneous Inputs},
+  title        = {OneResearchClaw: Fully Autonomous, Skill-driven Research Synthesis from Heterogeneous Inputs},
   year         = {2026},
   organization = {GitHub},
   url          = {https://github.com/gaotiexinqu/OneResearchClaw},
