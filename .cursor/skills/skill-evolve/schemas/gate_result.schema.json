@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GateResult",
+  "description": "Schema for regression gate execution results",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "proposal_id",
+    "evaluated_cases",
+    "case_results",
+    "overall_passed",
+    "decision",
+    "executed_at"
+  ],
+  "properties": {
+    "gate_id": {
+      "type": "string",
+      "pattern": "^GR-[0-9]{6}$",
+      "description": "Unique gate result identifier in format GR-XXXXXX"
+    },
+    "proposal_id": {
+      "type": "string",
+      "pattern": "^PP-[0-9]{6}$",
+      "description": "The proposal ID being gate-tested"
+    },
+    "evaluated_cases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Case IDs that were evaluated"
+    },
+    "case_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "checks_passed": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "check_name": {
+                  "type": "string"
+                },
+                "passed": {
+                  "type": "boolean"
+                },
+                "details": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "checks_failed": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "check_name": {
+                  "type": "string"
+                },
+                "passed": {
+                  "type": "boolean"
+                },
+                "details": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "duration_ms": {
+            "type": "integer",
+            "description": "Execution time in milliseconds"
+          },
+          "error_message": {
+            "type": "string",
+            "description": "Error message if case failed to execute"
+          }
+        }
+      },
+      "description": "Detailed results for each evaluated case"
+    },
+    "overall_passed": {
+      "type": "boolean",
+      "description": "Whether all cases passed"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "promote",
+        "reject",
+        "needs_work"
+      ],
+      "description": "Gate decision based on results"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Human-readable reason for the decision"
+    },
+    "executed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of gate execution"
+    },
+    "executed_by": {
+      "type": "string",
+      "description": "Executor identifier"
+    },
+    "execution_environment": {
+      "type": "object",
+      "properties": {
+        "workspace_path": {
+          "type": "string"
+        },
+        "candidate_version": {
+          "type": "string"
+        },
+        "base_version": {
+          "type": "string"
+        }
+      },
+      "description": "Details about the execution environment"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Output artifacts from gate execution"
+    }
+  }
+}

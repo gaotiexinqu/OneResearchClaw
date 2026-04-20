@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PatchProposal",
+  "description": "Schema for skill patch proposals generated from feedback analysis",
+  "type": "object",
+  "required": [
+    "proposal_id",
+    "feedback_ids",
+    "target_files",
+    "change_scope",
+    "suspected_root_cause",
+    "planned_changes",
+    "risk_level",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "proposal_id": {
+      "type": "string",
+      "pattern": "^PP-[0-9]{6}$",
+      "description": "Unique patch proposal identifier in format PP-XXXXXX"
+    },
+    "feedback_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^FB-[0-9]{6}$"
+      },
+      "description": "List of feedback IDs this proposal addresses"
+    },
+    "target_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "maxItems": 3,
+      "description": "Target skill files to modify (max 3 files per proposal for minimal change)"
+    },
+    "change_scope": {
+      "type": "string",
+      "enum": [
+        "local",
+        "contract_hardening",
+        "documentation",
+        "minimal_feature"
+      ],
+      "description": "Scope of changes"
+    },
+    "suspected_root_cause": {
+      "type": "string",
+      "description": "Analysis of the root cause"
+    },
+    "planned_changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string",
+            "description": "File to modify"
+          },
+          "change_type": {
+            "type": "string",
+            "enum": [
+              "add",
+              "modify",
+              "remove",
+              "replace"
+            ],
+            "description": "Type of change"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the change"
+          },
+          "before": {
+            "type": "string",
+            "description": "Original content or pattern to replace"
+          },
+          "after": {
+            "type": "string",
+            "description": "New content"
+          },
+          "line_range": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "integer"
+              },
+              "end": {
+                "type": "integer"
+              }
+            },
+            "description": "Optional line range for targeted changes"
+          }
+        }
+      },
+      "description": "Detailed planned changes"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "description": "Risk assessment of the patch"
+    },
+    "required_regression_cases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Case IDs required to pass regression gate"
+    },
+    "rollback_plan": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "git_revert",
+            "file_backup",
+            "version_manifest"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Plan for rollback if patch fails"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "candidate",
+        "testing",
+        "accepted",
+        "rejected",
+        "superseded"
+      ],
+      "description": "Current status in the evolve workflow"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of creation"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of last update"
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Creator identifier"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "proposal_type": {
+      "type": "string",
+      "enum": [
+        "core_skill_patch",
+        "sidecar_feature_patch",
+        "documentation_patch"
+      ],
+      "description": "Type of proposal being created"
+    },
+    "based_on_version": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Stable version this proposal was created against"
+    },
+    "manual_review_required": {
+      "type": "boolean",
+      "description": "Whether a human should refine the proposal before apply-changes"
+    },
+    "ready_to_apply": {
+      "type": "boolean",
+      "description": "Whether planned_changes are concrete enough for automatic candidate application"
+    }
+  }
+}

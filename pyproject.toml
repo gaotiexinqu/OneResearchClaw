@@ -1,0 +1,182 @@
+# One-Research - 通用多格式输入 → 结构化研究报告的 AI 流水线
+#
+# 安装方式：
+#   pip install -e .                    # 仅核心功能
+#   pip install -e ".[audio]"           # 音频处理
+#   pip install -e ".[document]"        # 文档解析
+#   pip install -e ".[export]"          # 报告导出
+#   pip install -e ".[table]"           # 表格处理
+#   pip install -e ".[api]"             # 外部 API（文献检索）
+#   pip install -e ".[full]"            # 全量安装
+#   pip install -e ".[dev]"             # 开发依赖
+#
+
+[project]
+name = "one-report"
+version = "0.1.0"
+description = "通用多格式输入 → 结构化研究报告的 AI 流水线"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10,<3.13"
+authors = [
+    { name = "One-Research Team" }
+]
+keywords = [
+    "research",
+    "ai",
+    "pipeline",
+    "transcription",
+    "document-processing",
+    "literature-review",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+# ============================================================
+# 核心依赖（始终安装）
+# ============================================================
+dependencies = []
+
+# ============================================================
+# 可选依赖组
+# ============================================================
+[project.optional-dependencies]
+
+# ---------- 音频处理 ----------
+# 用于: meeting-audio-grounding, meeting-video-grounding, audio_structuring
+audio = [
+    "whisperx>=3.0",
+    "opencc-python-reimplemented>=0.1.0",
+    "kokoro>=0.9.4",
+    "soundfile",
+]
+
+# ---------- 文档解析 ----------
+# 用于: document-grounding
+document = [
+    "docling>=0.5.0",
+]
+
+# ---------- 报告导出 ----------
+# 用于: report-export
+export = [
+    "python-docx>=1.0.0",
+    "pypdf>=3.0.0",
+    "kokoro>=0.9.4",
+    "soundfile",
+    "numpy>=1.24.4,<3.0.0",
+    "misaki[zh]",
+]
+
+# ---------- 表格处理 ----------
+# 用于: table-grounding
+table = [
+    "openpyxl>=3.1.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+]
+
+# ---------- 外部 API ----------
+# 用于: grounded-research-lit (外部 API 模式)
+api = [
+    "requests>=2.28.0",
+    "openai>=1.0.0",
+]
+
+# ---------- MCP Server ----------
+# 用于: external-reviewer MCP server
+mcp = [
+    "requests>=2.28.0",
+    "openai>=1.0.0",
+]
+
+# ---------- 全量安装 ----------
+full = [
+    "whisperx>=3.0",
+    "opencc-python-reimplemented>=0.1.0",
+    "docling>=0.5.0",
+    "kokoro>=0.9.4",
+    "soundfile",
+    "numpy>=1.24.4,<3.0.0",
+    "misaki[zh]",
+    "python-docx>=1.0.0",
+    "pypdf>=3.0.0",
+    "openpyxl>=3.1.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+    "requests>=2.28.0",
+    "openai>=1.0.0",
+]
+
+# ---------- 别名 ----------
+# 会议处理
+meeting = [
+    "whisperx>=3.0",
+    "opencc-python-reimplemented>=0.1.0",
+    "docling>=0.5.0",
+    "kokoro>=0.9.4",
+    "soundfile",
+]
+
+# ---------- 开发依赖 ----------
+dev = ["pytest>=7.0.0", "pytest-cov>=4.0.0", "ruff>=0.1.0", "mypy>=1.0.0"]
+
+# ============================================================
+# 模型管理
+# ============================================================
+[tool.one-report]
+# 模型存储目录（相对于项目根目录）
+models_dir = "models"
+
+# 模型配置
+[tool.one-report.models]
+# Faster-Whisper Large v2 - 语音识别
+# HuggingFace: Systran/faster-whisper-large-v3
+[[tool.one-report.models.list]]
+name = "faster-whisper-large-v2"
+type = "whisper"
+hf_repo = "Systran/faster-whisper-large-v3"
+description = "Faster-Whisper Large v2 语音识别模型"
+required_for = ["audio", "meeting"]
+
+# pyannote Speaker Diarization - 说话人分离
+# HuggingFace: pyannote/speaker-diarization-3.1
+[[tool.one-report.models.list]]
+name = "speaker-diarization-community-1"
+type = "diarization"
+hf_repo = "pyannote/speaker-diarization-3.1"
+description = "pyannote 说话人分离模型"
+required_for = ["audio", "meeting"]
+
+# Docling - 文档解析（通过 docling-tools 下载）
+[[tool.one-report.models.list]]
+name = "docling"
+type = "docling"
+hf_repo = "ds4sd/docling-models"
+description = "Docling 文档解析模型"
+required_for = ["document"]
+
+# ============================================================
+# 项目入口点
+# ============================================================
+[project.scripts]
+# 模型准备命令
+one-report-prepare-models = "one_report.cli.prepare_models:main"
+one-report-install-system-deps = "one_report.cli.system_deps:main"
+
+# ============================================================
+# 构建配置
+# ============================================================
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/one_report"]

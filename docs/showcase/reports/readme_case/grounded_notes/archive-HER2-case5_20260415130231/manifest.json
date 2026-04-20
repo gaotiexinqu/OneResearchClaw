@@ -1,0 +1,42 @@
+[
+  {
+    "relative_path": "HER2/1.md",
+    "file_name": "1.md",
+    "extension": ".md",
+    "size_bytes": 58515,
+    "detected_type": "document",
+    "supported": true,
+    "recommended_skill": "document-grounding",
+    "skip_reason": null
+  },
+  {
+    "relative_path": "HER2/11.pdf",
+    "file_name": "11.pdf",
+    "extension": ".pdf",
+    "size_bytes": 1315295,
+    "detected_type": "document",
+    "supported": true,
+    "recommended_skill": "document-grounding",
+    "skip_reason": null
+  },
+  {
+    "relative_path": "HER2/Liu 等 - 2022 - BCI Breast Cancer Immunohistochemical Image Generation through Pyramid Pix2pix.pdf",
+    "file_name": "Liu 等 - 2022 - BCI Breast Cancer Immunohistochemical Image Generation through Pyramid Pix2pix.pdf",
+    "extension": ".pdf",
+    "size_bytes": 5673664,
+    "detected_type": "document",
+    "supported": true,
+    "recommended_skill": "document-grounding",
+    "skip_reason": null
+  },
+  {
+    "relative_path": "HER2/Wang 等 - 2023 - Multi-Modal Learning with Missing Modality via Shared-Specific Feature Modelling.pdf",
+    "file_name": "Wang 等 - 2023 - Multi-Modal Learning with Missing Modality via Shared-Specific Feature Modelling.pdf",
+    "extension": ".pdf",
+    "size_bytes": 899093,
+    "detected_type": "document",
+    "supported": true,
+    "recommended_skill": "document-grounding",
+    "skip_reason": null
+  }
+]

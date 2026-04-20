@@ -1,0 +1,34 @@
+[
+  {
+    "relative_path": "HER2/1.md",
+    "detected_type": "document",
+    "recommended_skill": "document-grounding",
+    "downstream_status": "pending_child_grounding",
+    "child_output_path": "child_outputs/doc-1",
+    "notes": null
+  },
+  {
+    "relative_path": "HER2/11.pdf",
+    "detected_type": "document",
+    "recommended_skill": "document-grounding",
+    "downstream_status": "pending_child_grounding",
+    "child_output_path": "child_outputs/doc-11",
+    "notes": null
+  },
+  {
+    "relative_path": "HER2/Liu 等 - 2022 - BCI Breast Cancer Immunohistochemical Image Generation through Pyramid Pix2pix.pdf",
+    "detected_type": "document",
+    "recommended_skill": "document-grounding",
+    "downstream_status": "pending_child_grounding",
+    "child_output_path": "child_outputs/doc-Liu__-_2022_-_BCI_Breast_Cancer_Immunohistochemical_Image_Generation_through_Pyramid_Pix2pix",
+    "notes": null
+  },
+  {
+    "relative_path": "HER2/Wang 等 - 2023 - Multi-Modal Learning with Missing Modality via Shared-Specific Feature Modelling.pdf",
+    "detected_type": "document",
+    "recommended_skill": "document-grounding",
+    "downstream_status": "pending_child_grounding",
+    "child_output_path": "child_outputs/doc-Wang__-_2023_-_Multi-Modal_Learning_with_Missing_Modality_via_Shared-Specific_Feature_Modelling",
+    "notes": null
+  }
+]

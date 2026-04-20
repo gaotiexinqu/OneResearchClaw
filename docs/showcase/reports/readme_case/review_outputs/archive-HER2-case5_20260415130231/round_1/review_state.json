@@ -1,0 +1,35 @@
+{
+  "ground_id": "archive-HER2-case5_20260415130231",
+  "round": 1,
+  "scores": {
+    "topic_alignment": {"raw": 4, "weight": 15, "subtotal": 12.0},
+    "coverage_completeness": {"raw": 4, "weight": 20, "subtotal": 16.0},
+    "evidence_specificity": {"raw": 4, "weight": 20, "subtotal": 16.0},
+    "analytical_depth": {"raw": 4, "weight": 20, "subtotal": 16.0},
+    "structure_and_narrative_coherence": {"raw": 4, "weight": 15, "subtotal": 12.0},
+    "deliverability": {"raw": 4, "weight": 10, "subtotal": 8.0}
+  },
+  "weighted_total": 84.0,
+  "verdict": "repair",
+  "needs_repair": true,
+  "passed": false,
+  "repair_actions": [
+    {
+      "action": "rewrite_existing_sections",
+      "details": "Refactor Section 4.1 from paper-by-paper catalog to integrated body text. ShaSpec Deep Evidence quantitative findings (2.2pp gap, L1 optimal, sensitivity analysis) must be woven into Theme 2 body text — not a standalone subsection. HistDiST Deep Evidence findings (v-prediction 39% FID reduction, ablation breakdown) must be woven into Theme 3 with an ablation table — not a standalone subsection. Deep evidence subsections may be reduced to brief supplementary notes."
+    },
+    {
+      "action": "deepen_weak_paper_analyses",
+      "details": "Gap 1: Add practical feasibility layer to the CM-GAN pathologist acceptance study. Explain why it is a tractable near-term research problem: (1) requires only study design, not new image acquisition; (2) can follow Roche Navify study as design template; (3) results directly answer Gap 1's core question. This frames the gap as tractable rather than merely a gap."
+    }
+  ],
+  "used_reviewer_role": true,
+  "used_writer_role": false,
+  "reviewer_agent_path": ".cursor/agents/reviewer.md",
+  "writer_agent_path": null,
+  "reviewer_model_hint": "claude-4.6-opus-high-thinking",
+  "writer_model_hint": null,
+  "reviewer_independence": "high",
+  "final_report_path": null,
+  "timestamp": "2026-04-15T15:10:00Z"
+}

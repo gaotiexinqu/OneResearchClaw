@@ -1,0 +1,80 @@
+{
+  "manifest_path": "data/lit_downloads/archive-HER2-case5_20260415130231/manifest.json",
+  "downloaded_manifest_count": 9,
+  "parsable_pdf_count": 9,
+  "failed_pdf_items": [],
+  "papers_requiring_explicit_final_lit_coverage": [
+    {
+      "title": "Feature Learning with Multi-Stage Vision Transformers on Inter-Modality HER2 Status Scoring",
+      "url": "https://arxiv.org/abs/2512.22335",
+      "paper_id": "P003",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P003_Feature_Learning_with_Multi-Stage_Vision_Transformers_on_Inter-Modality_HER2_Status_Scoring.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    },
+    {
+      "title": "Precision HER2: a comprehensive AI system for accurate HER2 evaluation",
+      "url": "https://link.springer.com/article/10.1186/s12885-024-12980-6",
+      "paper_id": "P005",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P005_Precision_HER2_a_comprehensive_AI_system_for_accurate_HER2_evaluation.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    },
+    {
+      "title": "Multi-modal Learning with Missing Modality via Shared-Specific Feature Modelling (ShaSpec)",
+      "url": "https://arxiv.org/abs/2307.14126",
+      "paper_id": "P006",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P006_Multi-modal_Learning_with_Missing_Modality_via_Shared-Specific_Feature_Modelling_ShaSpec.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    },
+    {
+      "title": "Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification (DyMo)",
+      "url": "https://arxiv.org/abs/2601.22853",
+      "paper_id": "P007",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P007_Inference-Time_Dynamic_Modality_Selection_for_Incomplete_Multimodal_Classification_DyMo.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    },
+    {
+      "title": "MoRA: LoRA Guided Multi-Modal Disease Diagnosis with Missing Modality",
+      "url": "https://arxiv.org/html/2408.09064",
+      "paper_id": "P008",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P008_MoRA_LoRA_Guided_Multi-Modal_Disease_Diagnosis_with_Missing_Modality.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    },
+    {
+      "title": "HistDiST: Histopathological Diffusion-based Stain Transfer",
+      "url": "https://arxiv.org/abs/2505.06793",
+      "paper_id": "P009",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P009_HistDiST_Histopathological_Diffusion-based_Stain_Transfer.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    },
+    {
+      "title": "Learning generalizable AI models for multi-center histopathology image classification: AIDA",
+      "url": "https://www.nature.com/articles/s41698-024-00652-4",
+      "paper_id": "P011",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P011_Learning_generalizable_AI_models_for_multi-center_histopathology_image_classification_AIDA.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    },
+    {
+      "title": "Multi-Modal Foundation Models for Computational Pathology: A Survey",
+      "url": "https://arxiv.org/abs/2503.09091",
+      "paper_id": "P013",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P013_Multi-Modal_Foundation_Models_for_Computational_Pathology_A_Survey.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    },
+    {
+      "title": "CPath-Omni: A Unified Multimodal Foundation Model for Computational Pathology",
+      "url": "https://arxiv.org/abs/2412.12077",
+      "paper_id": "P014",
+      "note_markdown_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_paper_notes/P014_CPath-Omni_A_Unified_Multimodal_Foundation_Model_for_Computational_Pathology.md",
+      "refinement_kind": "strengthen",
+      "must_appear_in_final_lit": true
+    }
+  ]
+}

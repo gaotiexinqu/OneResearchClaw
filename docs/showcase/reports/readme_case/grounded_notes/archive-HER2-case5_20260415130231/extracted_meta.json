@@ -1,0 +1,15 @@
+{
+  "source_file": "/root/autodl-tmp/.autodl/video2report/One-Research/docs/showcase/inputs/case5/HER2-case5.zip",
+  "source_type": "zip",
+  "ground_id": "archive-HER2-case5_20260415130231",
+  "total_files": 4,
+  "supported_files": 4,
+  "skipped_files": 0,
+  "unsupported_files": 0,
+  "recommended_skill_counts": {
+    "document-grounding": 4
+  },
+  "child_outputs_dir": "child_outputs",
+  "unpacked_dir": "unpacked",
+  "child_output_policy": "all downstream child grounding outputs for supported files should be written under this archive bundle's child_outputs directory"
+}

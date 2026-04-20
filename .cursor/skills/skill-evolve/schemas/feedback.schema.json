@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NormalizedFeedback",
+  "description": "Schema for normalized structured feedback from skill execution",
+  "type": "object",
+  "required": [
+    "feedback_id",
+    "case_id",
+    "pipeline_stage",
+    "suspected_skill",
+    "failure_type",
+    "severity",
+    "user_feedback",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "feedback_id": {
+      "type": "string",
+      "pattern": "^FB-[0-9]{6}$",
+      "description": "Unique feedback identifier in format FB-XXXXXX"
+    },
+    "case_id": {
+      "type": "string",
+      "description": "Identifier for the case or run that produced this feedback"
+    },
+    "pipeline_stage": {
+      "type": "string",
+      "enum": [
+        "grounding",
+        "research",
+        "summary",
+        "review",
+        "export",
+        "unknown"
+      ],
+      "description": "The pipeline stage where the failure occurred"
+    },
+    "suspected_skill": {
+      "type": "string",
+      "description": "The skill suspected to be the source of the failure"
+    },
+    "failure_type": {
+      "type": "string",
+      "description": "Categorized failure type from the failure taxonomy"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "critical",
+        "major",
+        "minor",
+        "cosmetic"
+      ],
+      "description": "Severity level of the failure"
+    },
+    "user_feedback": {
+      "type": "string",
+      "description": "The original user feedback text (may contain mixed languages)"
+    },
+    "observed_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Path to the observed artifact"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of what was observed"
+          }
+        }
+      },
+      "description": "List of artifacts observed during the failure"
+    },
+    "expected_behavior": {
+      "type": "string",
+      "description": "Description of what was expected to happen"
+    },
+    "actual_behavior": {
+      "type": "string",
+      "description": "Description of what actually happened"
+    },
+    "current_skill_version": {
+      "type": "string",
+      "description": "Version of the skill at the time of failure"
+    },
+    "reproduce_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Steps to reproduce the issue"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "normalized",
+        "proposed",
+        "accepted",
+        "rejected",
+        "resolved"
+      ],
+      "description": "Current status in the evolve workflow"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Optional tags for categorization"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when feedback was created"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of last update"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or comments"
+    },
+    "preferred_fix_scope": {
+      "type": "string",
+      "enum": [
+        "core_skill",
+        "sidecar_only",
+        "documentation_only",
+        "unknown"
+      ],
+      "description": "Optional preference for the scope of the fix"
+    }
+  }
+}

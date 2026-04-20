@@ -1,0 +1,77 @@
+{
+  "ground_id": "archive-HER2-case5_20260415130231",
+  "total_rounds": 2,
+  "rounds": [
+    {
+      "round": 0,
+      "weighted_total": 69.0,
+      "verdict": "repair",
+      "needs_repair": true,
+      "scores": {
+        "topic_alignment": {"raw": 4, "weight": 15, "subtotal": 12.0},
+        "coverage_completeness": {"raw": 3, "weight": 20, "subtotal": 12.0},
+        "evidence_specificity": {"raw": 4, "weight": 20, "subtotal": 16.0},
+        "analytical_depth": {"raw": 3, "weight": 20, "subtotal": 12.0},
+        "structure_and_narrative_coherence": {"raw": 3, "weight": 15, "subtotal": 9.0},
+        "deliverability": {"raw": 4, "weight": 10, "subtotal": 8.0}
+      },
+      "repair_actions": [
+        {"action": "restore_omitted_literature_detail", "details": "Add explicit acknowledgment of 4 shallow papers (HER2 MAP P001, Frontiers HER2 MRI P002, Roche Navify P004, MuPD P010) in Section 4"},
+        {"action": "rewrite_existing_sections", "details": "Integrate ShaSpec Deep Evidence and HistDiST Deep Evidence into Themes 2 and 3 rather than standalone catalog subsections"},
+        {"action": "rewrite_existing_sections", "details": "Consolidate verbatim repetitions of BCI dataset study, 37.5-40% figure, HistDiST clinical caveat"},
+        {"action": "deepen_weak_paper_analyses", "details": "Deepen Gap 1 (pathologist acceptance causal mechanism), Gap 4 (end-to-end joint training technical difficulty), Gap 5 (0.84pp gap patient-level consequence)"}
+      ],
+      "reviewer_agent_path": ".cursor/agents/reviewer.md",
+      "writer_agent_path": null,
+      "reviewer_model_hint": "claude-4.6-opus-high-thinking",
+      "writer_model_hint": null,
+      "reviewer_independence": "high",
+      "timestamp": "2026-04-15T15:00:00Z"
+    },
+    {
+      "round": 1,
+      "weighted_total": 84.0,
+      "verdict": "repair",
+      "needs_repair": true,
+      "scores": {
+        "topic_alignment": {"raw": 4, "weight": 15, "subtotal": 12.0},
+        "coverage_completeness": {"raw": 4, "weight": 20, "subtotal": 16.0},
+        "evidence_specificity": {"raw": 4, "weight": 20, "subtotal": 16.0},
+        "analytical_depth": {"raw": 4, "weight": 20, "subtotal": 16.0},
+        "structure_and_narrative_coherence": {"raw": 4, "weight": 15, "subtotal": 12.0},
+        "deliverability": {"raw": 4, "weight": 10, "subtotal": 8.0}
+      },
+      "repair_actions": [
+        {"action": "rewrite_existing_sections", "details": "Refactor Section 4.1 from paper-by-paper catalog to integrated body text. ShaSpec Deep Evidence and HistDiST Deep Evidence must be woven into Theme 2 and Theme 3 body text rather than standalone subsections"},
+        {"action": "deepen_weak_paper_analyses", "details": "Gap 1: Add practical feasibility layer — why CM-GAN pathologist acceptance study is a tractable near-term research problem"}
+      ],
+      "reviewer_agent_path": ".cursor/agents/reviewer.md",
+      "writer_agent_path": null,
+      "reviewer_model_hint": "claude-4.6-opus-high-thinking",
+      "writer_model_hint": null,
+      "reviewer_independence": "high",
+      "timestamp": "2026-04-15T15:10:00Z"
+    },
+    {
+      "round": 2,
+      "weighted_total": 92.0,
+      "verdict": "pass",
+      "needs_repair": false,
+      "scores": {
+        "topic_alignment": {"raw": 4, "weight": 15, "subtotal": 12.0},
+        "coverage_completeness": {"raw": 4, "weight": 20, "subtotal": 16.0},
+        "evidence_specificity": {"raw": 4, "weight": 20, "subtotal": 16.0},
+        "analytical_depth": {"raw": 5, "weight": 20, "subtotal": 20.0},
+        "structure_and_narrative_coherence": {"raw": 5, "weight": 15, "subtotal": 15.0},
+        "deliverability": {"raw": 4, "weight": 10, "subtotal": 8.0}
+      },
+      "repair_actions": [],
+      "reviewer_agent_path": ".cursor/agents/reviewer.md",
+      "writer_agent_path": null,
+      "reviewer_model_hint": "claude-4.6-opus-high-thinking",
+      "writer_model_hint": null,
+      "reviewer_independence": "high",
+      "timestamp": "2026-04-15T15:20:00Z"
+    }
+  ]
+}

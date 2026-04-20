@@ -1,0 +1,151 @@
+{
+  "ground_id": "archive-HER2-case5_20260415130231",
+  "search_results": "data/lit_inputs/archive-HER2-case5_20260415130231/search_results.json",
+  "download_attempted": true,
+  "only_opened": true,
+  "eligible_item_count": 14,
+  "status": "completed",
+  "downloaded_count": 9,
+  "items": [
+    {
+      "title": "Deep-learning-based HER2 status assessment from multimodal breast cancer data predicts neoadjuvant therapy response",
+      "url": "https://nature.com/articles/s41551-025-01495-5",
+      "source": "Nature Biomedical Engineering",
+      "resolved_url": null,
+      "download_attempted": true,
+      "downloaded": false,
+      "download_path": null,
+      "download_error": "No downloadable PDF found"
+    },
+    {
+      "title": "Novel deep learning-based prediction of HER2 expression in breast cancer using multimodal MRI, nomogram, and decision curve analysis",
+      "url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2025.1593033/full",
+      "source": "Frontiers in Oncology",
+      "resolved_url": null,
+      "download_attempted": true,
+      "downloaded": false,
+      "download_path": null,
+      "download_error": "No downloadable PDF found"
+    },
+    {
+      "title": "Feature Learning with Multi-Stage Vision Transformers on Inter-Modality HER2 Status Scoring",
+      "url": "https://arxiv.org/abs/2512.22335",
+      "source": "arXiv",
+      "resolved_url": "https://arxiv.org/pdf/2512.22335.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/003_Feature_Learning_with_Multi-Stage_Vision_Transformers_on_Inter-Modality_HER2_Status_Scoring.pdf",
+      "download_error": null
+    },
+    {
+      "title": "AI-enhanced precision: boosting pathologist confidence in HER2 ultra-low diagnosis",
+      "url": "https://breast-cancer-research.biomedcentral.com/article/10.1186/s13058-026-02261-4",
+      "source": "Breast Cancer Research",
+      "resolved_url": null,
+      "download_attempted": true,
+      "downloaded": false,
+      "download_path": null,
+      "download_error": "No downloadable PDF found"
+    },
+    {
+      "title": "Precision HER2: a comprehensive AI system for accurate HER2 evaluation",
+      "url": "https://link.springer.com/article/10.1186/s12885-024-12980-6",
+      "source": "BMC Cancer",
+      "resolved_url": "https://link.springer.com/content/pdf/10.1186/s12885-024-12980-6.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/005_Precision_HER2_a_comprehensive_AI_system_for_accurate_HER2_evaluation.pdf",
+      "download_error": null
+    },
+    {
+      "title": "Multi-modal Learning with Missing Modality via Shared-Specific Feature Modelling (ShaSpec)",
+      "url": "https://arxiv.org/abs/2307.14126",
+      "source": "CVPR / arXiv",
+      "resolved_url": "https://arxiv.org/pdf/2307.14126.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/006_Multi-modal_Learning_with_Missing_Modality_via_Shared-Specific_Feature_Modelling_ShaSpec.pdf",
+      "download_error": null
+    },
+    {
+      "title": "Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification (DyMo)",
+      "url": "https://arxiv.org/abs/2601.22853",
+      "source": "arXiv",
+      "resolved_url": "https://arxiv.org/pdf/2601.22853.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/007_Inference-Time_Dynamic_Modality_Selection_for_Incomplete_Multimodal_Classification_DyMo.pdf",
+      "download_error": null
+    },
+    {
+      "title": "MoRA: LoRA Guided Multi-Modal Disease Diagnosis with Missing Modality",
+      "url": "https://arxiv.org/html/2408.09064",
+      "source": "arXiv",
+      "resolved_url": "https://arxiv.org/pdf/2408.09064.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/008_MoRA_LoRA_Guided_Multi-Modal_Disease_Diagnosis_with_Missing_Modality.pdf",
+      "download_error": null
+    },
+    {
+      "title": "HistDiST: Histopathological Diffusion-based Stain Transfer",
+      "url": "https://arxiv.org/abs/2505.06793",
+      "source": "arXiv",
+      "resolved_url": "https://arxiv.org/pdf/2505.06793.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/009_HistDiST_Histopathological_Diffusion-based_Stain_Transfer.pdf",
+      "download_error": null
+    },
+    {
+      "title": "MuPD: A Generative Foundation Model for Multimodal Histopathology",
+      "url": "https://arxiv.org/abs/2604.03635",
+      "source": "arXiv",
+      "resolved_url": "https://arxiv.org/pdf/2604.03635.pdf",
+      "download_attempted": true,
+      "downloaded": false,
+      "download_path": null,
+      "download_error": "The read operation timed out"
+    },
+    {
+      "title": "Learning generalizable AI models for multi-center histopathology image classification: AIDA",
+      "url": "https://www.nature.com/articles/s41698-024-00652-4",
+      "source": "npj Precision Oncology",
+      "resolved_url": "https://www.nature.com/articles/s41698-024-00652-4.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/011_Learning_generalizable_AI_models_for_multi-center_histopathology_image_classification_AIDA.pdf",
+      "download_error": null
+    },
+    {
+      "title": "Deep Learning-Based Prediction of Molecular Tumor Biomarkers from H&E: A Practical Review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9784641/",
+      "source": "Journal of Personalized Medicine",
+      "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9784641/pdf/jpm-12-02022.pdf",
+      "download_attempted": true,
+      "downloaded": false,
+      "download_path": null,
+      "download_error": "Downloaded file is only 1817 bytes; likely not a valid PDF"
+    },
+    {
+      "title": "Multi-Modal Foundation Models for Computational Pathology: A Survey",
+      "url": "https://arxiv.org/abs/2503.09091",
+      "source": "arXiv",
+      "resolved_url": "https://arxiv.org/pdf/2503.09091.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/013_Multi-Modal_Foundation_Models_for_Computational_Pathology_A_Survey.pdf",
+      "download_error": null
+    },
+    {
+      "title": "CPath-Omni: A Unified Multimodal Foundation Model for Computational Pathology",
+      "url": "https://arxiv.org/abs/2412.12077",
+      "source": "arXiv",
+      "resolved_url": "https://arxiv.org/pdf/2412.12077.pdf",
+      "download_attempted": true,
+      "downloaded": true,
+      "download_path": "data/lit_downloads/archive-HER2-case5_20260415130231/014_CPath-Omni_A_Unified_Multimodal_Foundation_Model_for_Computational_Pathology.pdf",
+      "download_error": null
+    }
+  ]
+}

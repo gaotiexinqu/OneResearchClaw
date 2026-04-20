@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VersionManifest",
+  "description": "Schema for skill version manifests",
+  "type": "object",
+  "required": [
+    "version",
+    "based_on",
+    "created_at"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^v[0-9]{3}$",
+      "description": "Version identifier in format vXXX (e.g., v001, v002)"
+    },
+    "based_on": {
+      "type": "string",
+      "description": "Version this version is based on (null for initial)"
+    },
+    "accepted_patch_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^PP-[0-9]{6}$"
+      },
+      "description": "Patch proposals included in this version"
+    },
+    "passed_gate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^GR-[0-9]{6}$"
+      },
+      "description": "Gate results that passed for this version"
+    },
+    "rejected_patch_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^PP-[0-9]{6}$"
+      },
+      "description": "Patch proposals rejected during development of this version"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of version creation"
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Creator identifier"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Version notes or changelog"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "development",
+        "candidate",
+        "stable",
+        "deprecated"
+      ],
+      "description": "Version status"
+    },
+    "affected_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Skills modified in this version"
+    },
+    "breaking_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of breaking changes if any"
+    },
+    "rollback_available": {
+      "type": "boolean",
+      "description": "Whether rollback is available from this version"
+    },
+    "rollback_to": {
+      "type": "string",
+      "pattern": "^v[0-9]{3}$",
+      "description": "Version to rollback to if needed"
+    },
+    "skills_directory": {
+      "type": "string",
+      "description": "The versioned skills directory relative path (e.g., 'skills-versions/v002')"
+    },
+    "original_skills_preserved": {
+      "type": "boolean",
+      "description": "Whether the original .cursor/skills/ directory was preserved"
+    },
+    "skills_path": {
+      "type": "string",
+      "description": "Absolute or workspace-relative path to the promoted skills directory"
+    },
+    "activation_note": {
+      "type": "string",
+      "description": "How to explicitly use this version in future prompts"
+    }
+  }
+}

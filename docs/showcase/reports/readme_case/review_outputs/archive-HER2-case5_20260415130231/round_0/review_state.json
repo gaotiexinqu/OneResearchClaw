@@ -1,0 +1,43 @@
+{
+  "ground_id": "archive-HER2-case5_20260415130231",
+  "round": 0,
+  "scores": {
+    "topic_alignment": {"raw": 4, "weight": 15, "subtotal": 12.0},
+    "coverage_completeness": {"raw": 3, "weight": 20, "subtotal": 12.0},
+    "evidence_specificity": {"raw": 4, "weight": 20, "subtotal": 16.0},
+    "analytical_depth": {"raw": 3, "weight": 20, "subtotal": 12.0},
+    "structure_and_narrative_coherence": {"raw": 3, "weight": 15, "subtotal": 9.0},
+    "deliverability": {"raw": 4, "weight": 10, "subtotal": 8.0}
+  },
+  "weighted_total": 69.0,
+  "verdict": "repair",
+  "needs_repair": true,
+  "passed": false,
+  "repair_actions": [
+    {
+      "action": "restore_omitted_literature_detail",
+      "details": "Add explicit acknowledgment that 4 of 14 opened papers (HER2 MAP P001, Frontiers HER2 MRI P002, Roche Navify P004, MuPD P010) lack PDF access and are shallow. This covers ~29% of the opened literature. Add a brief note in Section 4.1 or at the start of Section 4."
+    },
+    {
+      "action": "rewrite_existing_sections",
+      "details": "Integrate ShaSpec Deep Evidence and HistDiST Deep Evidence content thematically into Themes 2 and 3 rather than presenting them as standalone catalog sections. The catalog format preserves evidence but creates structural redundancy and delays thematic synthesis by 280+ lines."
+    },
+    {
+      "action": "rewrite_existing_sections",
+      "details": "Consolidate multiple verbatim repetitions: (a) BCI dataset's 37.5-40% pathologist accuracy appears in 6+ sections — cite once fully in Section 3, reference thereafter; (b) HistDiST clinical caveat appears verbatim in 3+ locations — cite once in Theme 3, reference in Risks; (c) BCI dataset study appears in 7+ locations — consolidate citations."
+    },
+    {
+      "action": "deepen_weak_paper_analyses",
+      "details": "For Gap 1: explain why pathologist acceptance is harder than algorithmic benchmarking (pixel-level vs. diagnostic-relevant morphological features). For Gap 4: explain why end-to-end joint training is technically difficult (gradient alignment, dataset size, training instability). For Gap 5: contextualize the 0.84pp gap (95.09% vs. 94.25%) in patient-level clinical consequence."
+    }
+  ],
+  "used_reviewer_role": true,
+  "used_writer_role": false,
+  "reviewer_agent_path": ".cursor/agents/reviewer.md",
+  "writer_agent_path": null,
+  "reviewer_model_hint": "claude-4.6-opus-high-thinking",
+  "writer_model_hint": null,
+  "reviewer_independence": "high",
+  "final_report_path": null,
+  "timestamp": "2026-04-15T15:00:00Z"
+}

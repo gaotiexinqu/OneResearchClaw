@@ -1,0 +1,26 @@
+{
+  "ground_id": "archive-HER2-case5_20260415130231",
+  "round": 2,
+  "scores": {
+    "topic_alignment": {"raw": 4, "weight": 15, "subtotal": 12.0},
+    "coverage_completeness": {"raw": 4, "weight": 20, "subtotal": 16.0},
+    "evidence_specificity": {"raw": 4, "weight": 20, "subtotal": 16.0},
+    "analytical_depth": {"raw": 5, "weight": 20, "subtotal": 20.0},
+    "structure_and_narrative_coherence": {"raw": 5, "weight": 15, "subtotal": 15.0},
+    "deliverability": {"raw": 4, "weight": 10, "subtotal": 8.0}
+  },
+  "weighted_total": 92.0,
+  "verdict": "pass",
+  "needs_repair": false,
+  "passed": true,
+  "repair_actions": [],
+  "used_reviewer_role": true,
+  "used_writer_role": false,
+  "reviewer_agent_path": ".cursor/agents/reviewer.md",
+  "writer_agent_path": null,
+  "reviewer_model_hint": "claude-4.6-opus-high-thinking",
+  "writer_model_hint": null,
+  "reviewer_independence": "high",
+  "final_report_path": "data/reports/archive-HER2-case5_20260415130231/research_report.md",
+  "timestamp": "2026-04-15T15:20:00Z"
+}

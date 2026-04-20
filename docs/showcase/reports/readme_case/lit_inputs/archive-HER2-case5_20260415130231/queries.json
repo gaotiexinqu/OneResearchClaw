@@ -1,0 +1,23 @@
+{
+  "ground_id": "archive-HER2-case5_20260415130231",
+  "problem_queries": [
+    "HER2 breast cancer deep learning multimodal pathology",
+    "immunohistochemistry AI automated scoring HER2",
+    "missing modality in multimodal deep learning medical imaging",
+    "H&E histopathology molecular biomarker prediction from histology",
+    "HER2-low breast cancer diagnostic challenges AI"
+  ],
+  "method_queries": [
+    "cross-modal image synthesis histopathology GAN Pix2Pix",
+    "shared-specific feature modeling multimodal learning missing modality",
+    "channel attention adaptive multimodal fusion medical imaging",
+    "missing modality branch selection dynamic deep learning",
+    "H&E to immunohistochemistry image translation breast cancer"
+  ],
+  "constraint_queries": [
+    "histopathology deep learning domain generalization cross-institution",
+    "clinical validation AI HER2 pathology deployment challenges",
+    "generated synthetic medical images pathologist accuracy evaluation",
+    "computational pathology external dataset validation gap"
+  ]
+}

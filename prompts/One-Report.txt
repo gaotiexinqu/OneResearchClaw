@@ -1,0 +1,18 @@
+Please use the existing `.cursor/skills/one-report/` skill to generate a full report from one input file.
+
+First read:
+- `.cursor/skills/one-report/SKILL.md`
+
+Input:
+- input_path: docs/showcase/inputs/case5/HER2-case5.zip
+- output_formats: pdf
+- research_mode: complex
+
+Search settings:
+- search_backend: cursor
+- require_open_link: true
+- download_opened_literature: true
+
+Optional:
+- output_lang: zh
+- transcription_language: zh

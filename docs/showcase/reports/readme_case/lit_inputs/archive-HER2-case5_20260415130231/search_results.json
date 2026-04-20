@@ -1,0 +1,179 @@
+{
+  "queries": [
+    {
+      "query": "HER2 breast cancer deep learning multimodal pathology 2024 2025",
+      "results": [
+        {
+          "title": "Deep-learning-based HER2 status assessment from multimodal breast cancer data predicts neoadjuvant therapy response",
+          "url": "https://nature.com/articles/s41551-025-01495-5",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/nature_biomed_her2_map_2025.md",
+          "is_research_literature": true,
+          "year": 2025,
+          "source": "Nature Biomedical Engineering"
+        },
+        {
+          "title": "Novel deep learning-based prediction of HER2 expression in breast cancer using multimodal MRI, nomogram, and decision curve analysis",
+          "url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2025.1593033/full",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/frontiers_oncology_her2_mri_2025.md",
+          "is_research_literature": true,
+          "year": 2025,
+          "source": "Frontiers in Oncology"
+        },
+        {
+          "title": "Feature Learning with Multi-Stage Vision Transformers on Inter-Modality HER2 Status Scoring",
+          "url": "https://arxiv.org/abs/2512.22335",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/her2_vit_multistage_arxiv_2025.md",
+          "is_research_literature": true,
+          "year": 2025,
+          "source": "arXiv"
+        }
+      ]
+    },
+    {
+      "query": "immunohistochemistry AI automated scoring HER2 deep learning",
+      "results": [
+        {
+          "title": "AI-enhanced precision: boosting pathologist confidence in HER2 ultra-low diagnosis",
+          "url": "https://breast-cancer-research.biomedcentral.com/article/10.1186/s13058-026-02261-4",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/breast_cancer_research_her2_ultra_low_ai_2026.md",
+          "is_research_literature": true,
+          "year": 2026,
+          "source": "Breast Cancer Research"
+        },
+        {
+          "title": "Precision HER2: a comprehensive AI system for accurate HER2 evaluation",
+          "url": "https://link.springer.com/article/10.1186/s12885-024-12980-6",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/bmc_cancer_precision_her2_2024.md",
+          "is_research_literature": true,
+          "year": 2024,
+          "source": "BMC Cancer"
+        }
+      ]
+    },
+    {
+      "query": "missing modality multimodal deep learning medical imaging",
+      "results": [
+        {
+          "title": "Multi-modal Learning with Missing Modality via Shared-Specific Feature Modelling (ShaSpec)",
+          "url": "https://arxiv.org/abs/2307.14126",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/shaspec_cvpr_2023.md",
+          "is_research_literature": true,
+          "year": 2023,
+          "source": "CVPR / arXiv"
+        },
+        {
+          "title": "Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification (DyMo)",
+          "url": "https://arxiv.org/abs/2601.22853",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/dymo_arxiv_2026.md",
+          "is_research_literature": true,
+          "year": 2026,
+          "source": "arXiv"
+        },
+        {
+          "title": "MoRA: LoRA Guided Multi-Modal Disease Diagnosis with Missing Modality",
+          "url": "https://arxiv.org/html/2408.09064",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/mora_arxiv_2024.md",
+          "is_research_literature": true,
+          "year": 2024,
+          "source": "arXiv"
+        }
+      ]
+    },
+    {
+      "query": "cross-modal image synthesis histopathology GAN Pix2Pix",
+      "results": [
+        {
+          "title": "HistDiST: Histopathological Diffusion-based Stain Transfer",
+          "url": "https://arxiv.org/abs/2505.06793",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/histdist_arxiv_2025.md",
+          "is_research_literature": true,
+          "year": 2025,
+          "source": "arXiv"
+        },
+        {
+          "title": "MuPD: A Generative Foundation Model for Multimodal Histopathology",
+          "url": "https://arxiv.org/abs/2604.03635",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/mupd_arxiv_2026.md",
+          "is_research_literature": true,
+          "year": 2026,
+          "source": "arXiv"
+        }
+      ]
+    },
+    {
+      "query": "histopathology deep learning domain generalization cross-institution",
+      "results": [
+        {
+          "title": "Learning generalizable AI models for multi-center histopathology image classification: AIDA",
+          "url": "https://www.nature.com/articles/s41698-024-00652-4",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/aida_npj_precision_oncology_2024.md",
+          "is_research_literature": true,
+          "year": 2024,
+          "source": "npj Precision Oncology"
+        }
+      ]
+    },
+    {
+      "query": "H&E histopathology molecular biomarker prediction deep learning",
+      "results": [
+        {
+          "title": "Deep Learning-Based Prediction of Molecular Tumor Biomarkers from H&E: A Practical Review",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9784641/",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/biomarker_prediction_he_pmc_2022.md",
+          "is_research_literature": true,
+          "year": 2022,
+          "source": "Journal of Personalized Medicine"
+        }
+      ]
+    },
+    {
+      "query": "histopathology AI foundation model multimodal 2025 2026 site:arxiv.org",
+      "results": [
+        {
+          "title": "Multi-Modal Foundation Models for Computational Pathology: A Survey",
+          "url": "https://arxiv.org/abs/2503.09091",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/multimodal_foundation_models_survey_2025.md",
+          "is_research_literature": true,
+          "year": 2025,
+          "source": "arXiv"
+        },
+        {
+          "title": "CPath-Omni: A Unified Multimodal Foundation Model for Computational Pathology",
+          "url": "https://arxiv.org/abs/2412.12077",
+          "opened": true,
+          "open_status": "success",
+          "opened_source_path": "data/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/cpath_omni_arxiv_2024.md",
+          "is_research_literature": true,
+          "year": 2024,
+          "source": "arXiv"
+        }
+      ]
+    }
+  ]
+}

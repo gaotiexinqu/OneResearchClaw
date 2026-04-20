@@ -1,0 +1,49 @@
+{
+  "name": "call_ext_reviewer",
+  "description": "Call external LLM API as reviewer for grounded-review scoring. Supports OpenAI-compatible APIs (including custom base_url) and Gemini APIs. Returns structured JSON with rubric scores, verdict, and repair actions. This tool is used when one-report is invoked with reviewer_api_config.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "provider": {
+        "type": "string",
+        "enum": ["openai", "gemini"],
+        "description": "The external LLM provider type"
+      },
+      "model": {
+        "type": "string",
+        "description": "Model identifier (e.g., gpt-4o, gemini-2.5-pro-preview-03-12, Gemini-3-Flash-Preview)"
+      },
+      "api_key": {
+        "type": "string",
+        "description": "API key for authentication (can also use api_key_env for env var name)"
+      },
+      "api_key_env": {
+        "type": "string",
+        "description": "Environment variable name containing the API key (alternative to api_key)"
+      },
+      "base_url": {
+        "type": "string",
+        "description": "API base URL (optional, defaults to official endpoints)"
+      },
+      "temperature": {
+        "type": "number",
+        "default": 0.3,
+        "description": "Temperature for generation (0.0-1.0, recommend 0.1-0.3 for review tasks)"
+      },
+      "max_tokens": {
+        "type": "integer",
+        "default": 4096,
+        "description": "Maximum tokens in response"
+      },
+      "system_prompt": {
+        "type": "string",
+        "description": "The reviewer system prompt defining the role and scoring rubric"
+      },
+      "user_prompt": {
+        "type": "string",
+        "description": "The user prompt containing the report content to review and scoring instructions"
+      }
+    },
+    "required": ["provider", "model", "system_prompt", "user_prompt"]
+  }
+}
