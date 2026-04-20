@@ -16,6 +16,14 @@ OneResearchClaw 是一套面向真实工作流的 **多格式输入 → 研究�
 它支持从会议音频/视频、文档、表格、PPT、ZIP 混合包，以及 arXiv / YouTube / Bilibili 链接出发，逐步完成内容整理、文献 research、质量 review、技能演化与多格式导出。
 
 <p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+"></a>
+  <a href="https://github.com/gaotiexinqu/OneResearchClaw"><img src="https://img.shields.io/badge/GitHub-OneResearchClaw-181717?logo=github" alt="GitHub"></a>
+  <a href="https://github.com/gaotiexinqu/OneResearchClaw#-citation"><img src="https://img.shields.io/badge/Cite-OneResearchClaw-orange?logo=readme&logoColor=white" alt="Citation"></a>
+  <a href="https://github.com/gaotiexinqu/OneResearchClaw#-star-history"><img src="https://img.shields.io/badge/Star_History-⭐-blue?logo=github" alt="⭐ Star History"></a>
+</p>
+
+<p align="center">
   <a href="./README.md"><b>🌐 English README</b></a> ·
   <a href="https://weiyang209.github.io/OneResearchClaw/index_zh.html"><b>🖥️ Project Page</b></a> ·
   <a href="#-showcase"><b>🎬 Showcase</b></a> ·
@@ -555,11 +563,13 @@ user feedback → patch proposal → validation gate → derived skill set
 ## ⭐ Star History
 
 <a href="https://www.star-history.com/?repos=gaotiexinqu%2FOneResearchClaw&type=date&legend=top-left">
+
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=gaotiexinqu/OneResearchClaw&type=date&theme=dark&legend=top-left" />
    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=gaotiexinqu/OneResearchClaw&type=date&legend=top-left" />
    <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=gaotiexinqu/OneResearchClaw&type=date&legend=top-left" />
  </picture>
+
 </a>
 
 ---
@@ -582,6 +592,24 @@ We thank the authors and maintainers of these projects for sharing their work wi
 MIT — see [LICENSE](LICENSE) for details.
 
 ---
+
+## 📌 Citation
+
+If you find OneResearchClaw helpful, consider cite us:
+
+```bibtex
+@misc{OneResearchClaw2026,
+  author       = {Yang, Wei* and Zhao, Yiming* and Zeng, Yu* and Fang, Zhen* and Huang, Wenxuan and Zhang, Ziao and Shi, Kou and Miao, Qing and Chen, Lin and Chen, Zehui and Bao, Xikun},
+  title        = {OneResearchClaw: Fully Autonomous, Skill-Driven Research Synthesis from Heterogeneous Inputs},
+  year         = {2026},
+  organization = {GitHub},
+  url          = {https://github.com/gaotiexinqu/OneResearchClaw},
+}
+```
+
+<p align="center">
+  <a href="https://img.shields.io/badge/License-MIT-blue.svg"><a href="https://img.shields.io/badge/Code%20License-MIT-yellow.svg"><a href="https://img.shields.io/badge/Model%20License-CC%20BY--NC--SA%204.0-orange.svg"><a href="https://img.shields.io/badge/Python-3.10%2B-green.svg"><a href="https://img.shields.io/badge/LangGraph-Agentic%20Workflows-purple.svg"><a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Black"></a>
+</p>
 
 <p align="center">
   <sub>Built with <a href="https://cursor.com/cn/get-started?cc_platform=google&cc_campaignid=23639215328&cc_adgroupid=194817004980&cc_adid=799754797082&cc_keyword=cursor&cc_matchtype=b&cc_device=c&cc_network=g&cc_placement=&cc_location=2702&cc_adposition=&gad_source=1&gad_campaignid=23639215328&gbraid=0AAAABAkdGgSYLK4tfnXaSFHBrYgrb-ttX">Cursor</a> by the OneResearchClaw Team</sub>
