@@ -3,8 +3,17 @@
 </p>
 
 
+<h2 align="center"><b>Start Any Research in One Claw. 🦞</b></h2>
+
 <p align="center">
-  <strong>Any research. One Claw. 🦞 </strong><br>
+  <strong>From real materials to reports with a fully autonomous & skill-driven researcher.</strong>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+"></a>
+  <a href="https://github.com/gaotiexinqu/OneResearchClaw"><img src="https://img.shields.io/badge/GitHub-OneResearchClaw-181717?logo=github" alt="GitHub"></a>
+  <a href="#citation"><img src="https://img.shields.io/badge/Cite-📜-orange?logo=readme&logoColor=white" alt="Citation"></a>
 </p>
 
 
@@ -594,16 +603,19 @@ MIT — see [LICENSE](LICENSE) for details.
 If you find OneResearchClaw helpful, consider cite us:
 
 ```bibtex
-@misc{,
-  author       = {},
-  title        = {},
+@misc{OneResearchClaw2026,
+  author       = {Yang, Wei* and Zhao, Yiming* and Zeng, Yu* and Fang, Zhen* and Huang, Wenxuan and Zhang, Ziao and Shi, Kou and Miao, Qing and Chen, Lin and Chen, Zehui and Bao, Xikun},
+  title        = {OneResearchClaw: Fully Autonomous, Skill-Driven Research Synthesis from Heterogeneous Inputs},
   year         = {2026},
   organization = {GitHub},
-  url          = {},
+  url          = {https://github.com/gaotiexinqu/OneResearchClaw},
 }
 ```
 
----
+
+<p align="center">
+  <a href="https://img.shields.io/badge/License-MIT-blue.svg"><a href="https://img.shields.io/badge/Code%20License-MIT-yellow.svg"><a href="https://img.shields.io/badge/Model%20License-CC%20BY--NC--SA%204.0-orange.svg"><a href="https://img.shields.io/badge/Python-3.10%2B-green.svg"><a href="https://img.shields.io/badge/LangGraph-Agentic%20Workflows-purple.svg"><a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Black"></a>
+</p>---
 
 <p align="center">
   <sub>Built with <a href="https://cursor.com/cn/get-started?cc_platform=google&cc_campaignid=23639215328&cc_adgroupid=194817004980&cc_adid=799754797082&cc_keyword=cursor&cc_matchtype=b&cc_device=c&cc_network=g&cc_placement=&cc_location=2702&cc_adposition=&gad_source=1&gad_campaignid=23639215328&gbraid=0AAAABAkdGgSYLK4tfnXaSFHBrYgrb-ttX">Cursor</a> by the OneResearchClaw Team</sub>
