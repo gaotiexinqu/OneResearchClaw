@@ -558,7 +558,7 @@ The table below lists the main skill set in the current repository, grouped by f
 
 ## ⭐ Star History
 
-<a href="https://www.star-history.com/?repos=gaotiexinqu%2FOne-Research&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=gaotiexinqu%2FOneResearchClaw&type=date&legend=top-left">
 
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=gaotiexinqu/One-Research&type=date&theme=dark&legend=top-left" />
