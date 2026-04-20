@@ -9,14 +9,6 @@
   <strong>From real materials to reports with a fully autonomous & skill-driven researcher.</strong>
 </p>
 
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
-  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+"></a>
-  <a href="https://github.com/gaotiexinqu/OneResearchClaw"><img src="https://img.shields.io/badge/GitHub-OneResearchClaw-181717?logo=github" alt="GitHub"></a>
-  <a href="https://github.com/gaotiexinqu/OneResearchClaw#-citation"><img src="https://img.shields.io/badge/Cite-📜-orange?logo=readme&logoColor=white" alt="Citation"></a>
-</p>
-
-
 ---
 
 <p align="center">
@@ -26,6 +18,13 @@
 
 OneResearchClaw is a **multi-format input → research report generation pipeline** designed for real-world workflows.  
 It supports starting from meeting audio/video, documents, tables, PPT files, ZIP mixed-material packages, and arXiv / YouTube / Bilibili links, then progressively completes content grounding, literature research, quality review, skill evolution, and multi-format export.
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+"></a>
+  <a href="https://github.com/gaotiexinqu/OneResearchClaw"><img src="https://img.shields.io/badge/GitHub-OneResearchClaw-181717?logo=github" alt="GitHub"></a>
+  <a href="https://github.com/gaotiexinqu/OneResearchClaw#-citation"><img src="https://img.shields.io/badge/Cite-📜-orange?logo=readme&logoColor=white" alt="Citation"></a>
+</p>
 
 <p align="center">
   <a href="./README_CH.md"><b>🌐 中文 README</b></a> ·
