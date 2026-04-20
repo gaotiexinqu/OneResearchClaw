@@ -71,17 +71,17 @@ It supports starting from meeting audio/video, documents, tables, PPT files, ZIP
 
 ## 🔥 News
 
-- **[2026/04/13] Skill-Evolve is officially released**: OneResearchClaw now supports continuous skill-set evolution based on user feedback, saving personalized preferences as selectable derived versions so the automation pipeline can gradually adapt to the way you work.
+- **[2026/04/21] Skill-Evolve is officially released**: OneResearchClaw now supports continuous skill-set evolution based on user feedback, saving personalized preferences as selectable derived versions so the automation pipeline can gradually adapt to the way you work.
 
-- **[2026/04/12] One-click cloud link ingestion**: Whether the input is an arXiv paper, a YouTube video, or Bilibili content, simply paste the link and the system will automatically download it locally and start the research workflow.
+- **[2026/04/20] One-click cloud link ingestion**: Whether the input is an arXiv paper, a YouTube video, or Bilibili content, simply paste the link and the system will automatically download it locally and start the research workflow.
 
-- **[2026/04/11] Multi-model Review mechanism**: The Review → Rewrite loop supports bounded iterative revision, significantly improving the quality of final deliverables.
+- **[2026/04/19] Multi-model Review mechanism**: The Review → Rewrite loop supports bounded iterative revision, significantly improving the quality of final deliverables.
 
-- **[2026/04/09] Controllable Research depth**: Choose from `simple / medium / complex`. Whether you need a quick first pass or a deeper research run, the depth and resource usage are easier to control.
+- **[2026/04/17] Controllable Research depth**: Choose from `simple / medium / complex`. Whether you need a quick first pass or a deeper research run, the depth and resource usage are easier to control.
 
-- **[2026/04/08] Multi-topic parallel execution**: The system can automatically identify multiple topics in a meeting and generate independent reports. Even dense group meetings can be preserved in a complete and structured way.
+- **[2026/04/16] Multi-topic parallel execution**: The system can automatically identify multiple topics in a meeting and generate independent reports. Even dense group meetings can be preserved in a complete and structured way.
 
-- **[2026/04/05] OneResearchClaw released**: From meeting recordings to PDFs, from tables to ZIP packages, real materials are scattered across formats and locations. Normally, you need to manually connect keyword extraction, research, and summarization across workflow stages. OneResearchClaw solves this problem: input files in different formats, then automatically perform structuring, keyword extraction, deep research, content synthesis, and multi-format report export. Reports are now one command away, without manual handoffs.
+- **[2026/04/13] OneResearchClaw**: From meeting recordings to PDFs, from tables to ZIP packages, real materials are scattered across formats and locations. Normally, you need to manually connect keyword extraction, research, and summarization across workflow stages. OneResearchClaw solves this problem: input files in different formats, then automatically perform structuring, keyword extraction, deep research, content synthesis, and multi-format report export. Reports are now one command away, without manual handoffs.
 
 ---
 
