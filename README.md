@@ -11,9 +11,9 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+"></a>
+  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+"></a>
   <a href="https://github.com/gaotiexinqu/OneResearchClaw"><img src="https://img.shields.io/badge/GitHub-OneResearchClaw-181717?logo=github" alt="GitHub"></a>
-  <a href="#citation"><img src="https://img.shields.io/badge/Cite-📜-orange?logo=readme&logoColor=white" alt="Citation"></a>
+  <a href="https://github.com/gaotiexinqu/OneResearchClaw#-citation"><img src="https://img.shields.io/badge/Cite-📜-orange?logo=readme&logoColor=white" alt="Citation"></a>
 </p>
 
 
