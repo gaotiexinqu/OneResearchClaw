@@ -35,6 +35,12 @@ It supports starting from meeting audio/video, documents, tables, PPT files, ZIP
   <a href="#-skills-catalog"><b>🧩 Skills Catalog</b></a>
 </p>
 
+<p align="center">
+  <a href="./docs/assets/wechat.jpg"><b>💬 WeChat</b></a> ·
+  <a href="./docs/assets/rednote.jpg"><b>📕 RedNote</b></a> ·
+  <a href="https://discord.gg/D53kdpX9"><b>🤖 Discord</b></a>
+</p>
+
 
 ---
 
