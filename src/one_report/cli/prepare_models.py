@@ -85,6 +85,18 @@ MODELS: list[ModelConfig] = [
 # 工具函数
 # ============================================================
 
+def ensure_models_dir(models_dir: Path) -> None:
+    """确保模型目录存在"""
+    models_dir.mkdir(parents=True, exist_ok=True)
+
+
+def get_models_dir(repo_root: Optional[Path] = None) -> Path:
+    """获取模型存储目录"""
+    if repo_root is None:
+        repo_root = get_repo_root()
+    return repo_root / "models"
+
+
 def get_repo_root() -> Path:
     """获取项目根目录"""
     # 方式1: 从当前文件向上查找 pyproject.toml
@@ -99,34 +111,6 @@ def get_repo_root() -> Path:
 
     # 方式3: 使用当前工作目录
     return Path.cwd()
-
-
-def get_models_dir(repo_root: Optional[Path] = None) -> Path:
-    """获取模型存储目录"""
-    if repo_root is None:
-        repo_root = get_repo_root()
-    return repo_root / "models"
-
-
-def ensure_models_dir(models_dir: Path) -> None:
-    """确保模型目录存在"""
-    models_dir.mkdir(parents=True, exist_ok=True)
-
-
-def is_model_downloaded(model_name: str, models_dir: Path) -> bool:
-    """检查模型是否已下载"""
-    model_path = models_dir / model_name
-    if not model_path.exists():
-        return False
-    # 检查目录是否非空
-    return any(model_path.iterdir())
-
-
-def get_model_status(model: ModelConfig, models_dir: Path) -> str:
-    """获取模型状态"""
-    if is_model_downloaded(model.name, models_dir):
-        return "✓ 已下载"
-    return "○ 未下载"
 
 
 def format_model_info(model: ModelConfig, models_dir: Path) -> str:
@@ -147,66 +131,55 @@ def format_model_info(model: ModelConfig, models_dir: Path) -> str:
     return info
 
 
+def get_model_status(model: ModelConfig, models_dir: Path) -> str:
+    """获取模型状态"""
+    if is_model_downloaded(model.name, models_dir):
+        return "✓ 已下载"
+    return "○ 未下载"
+
+
+def is_model_downloaded(model_name: str, models_dir: Path) -> bool:
+    """检查模型是否已下载"""
+    model_path = models_dir / model_name
+    if not model_path.exists():
+        return False
+    # 检查目录是否非空
+    return any(model_path.iterdir())
+
+
 # ============================================================
 # 下载器
 # ============================================================
 
-def check_huggingface_cli() -> bool:
-    """检查 huggingface-cli 是否可用"""
-    try:
-        subprocess.run(
-            ["huggingface-cli", "--version"],
-            capture_output=True,
-            check=True,
-        )
-        return True
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return False
+def download_all_models(models_dir: Path, token: Optional[str] = None) -> dict[str, bool]:
+    """下载所有模型"""
+    results = {}
+    for model in MODELS:
+        results[model.name] = download_model(model, models_dir, token)
+    return results
 
 
-def check_huggingface_hub() -> bool:
-    """检查 huggingface_hub 是否可用"""
-    try:
-        import huggingface_hub  # noqa: F401
-        return True
-    except ImportError:
-        return False
+def download_models_by_group(groups: list[str], models_dir: Path, token: Optional[str] = None) -> dict[str, bool]:
+    """按功能组下载模型"""
+    results = {}
+    for model in MODELS:
+        if any(g in model.required_for for g in groups):
+            results[model.name] = download_model(model, models_dir, token)
+    return results
 
 
-def download_with_huggingface_cli(repo_id: str, local_dir: str, token: Optional[str] = None) -> bool:
-    """使用 huggingface-cli 下载模型"""
-    cmd = ["huggingface-cli", "download", repo_id]
-    if token:
-        cmd.extend(["--token", token])
-    cmd.extend(["--local-dir", local_dir])
+def download_specific_models(model_names: list[str], models_dir: Path, token: Optional[str] = None) -> dict[str, bool]:
+    """下载指定的模型"""
+    results = {}
+    name_to_model = {m.name: m for m in MODELS}
 
-    try:
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-        return result.returncode == 0
-    except subprocess.CalledProcessError as e:
-        print(f"      下载失败: {e.stderr}", file=sys.stderr)
-        return False
-
-
-def download_with_huggingface_hub(repo_id: str, local_dir: str, token: Optional[str] = None) -> bool:
-    """使用 huggingface_hub Python 包下载模型"""
-    try:
-        from huggingface_hub import snapshot_download
-        snapshot_download(
-            repo_id=repo_id,
-            local_dir=local_dir,
-            token=token,
-            resume_download=True,
-        )
-        return True
-    except Exception as e:
-        print(f"      下载失败: {e}", file=sys.stderr)
-        return False
+    for name in model_names:
+        if name in name_to_model:
+            results[name] = download_model(name_to_model[name], models_dir, token)
+        else:
+            print(f"⚠️  未知模型: {name}")
+            results[name] = False
+    return results
 
 
 def download_model(model: ModelConfig, models_dir: Path, token: Optional[str] = None) -> bool:
@@ -264,40 +237,76 @@ def download_model(model: ModelConfig, models_dir: Path, token: Optional[str] = 
             return False
 
 
-def download_all_models(models_dir: Path, token: Optional[str] = None) -> dict[str, bool]:
-    """下载所有模型"""
-    results = {}
-    for model in MODELS:
-        results[model.name] = download_model(model, models_dir, token)
-    return results
+def download_with_huggingface_hub(repo_id: str, local_dir: str, token: Optional[str] = None) -> bool:
+    """使用 huggingface_hub Python 包下载模型"""
+    try:
+        from huggingface_hub import snapshot_download
+        snapshot_download(
+            repo_id=repo_id,
+            local_dir=local_dir,
+            token=token,
+            resume_download=True,
+        )
+        return True
+    except Exception as e:
+        print(f"      下载失败: {e}", file=sys.stderr)
+        return False
 
 
-def download_models_by_group(groups: list[str], models_dir: Path, token: Optional[str] = None) -> dict[str, bool]:
-    """按功能组下载模型"""
-    results = {}
-    for model in MODELS:
-        if any(g in model.required_for for g in groups):
-            results[model.name] = download_model(model, models_dir, token)
-    return results
+def download_with_huggingface_cli(repo_id: str, local_dir: str, token: Optional[str] = None) -> bool:
+    """使用 huggingface-cli 下载模型"""
+    cmd = ["huggingface-cli", "download", repo_id]
+    if token:
+        cmd.extend(["--token", token])
+    cmd.extend(["--local-dir", local_dir])
+
+    try:
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return result.returncode == 0
+    except subprocess.CalledProcessError as e:
+        print(f"      下载失败: {e.stderr}", file=sys.stderr)
+        return False
 
 
-def download_specific_models(model_names: list[str], models_dir: Path, token: Optional[str] = None) -> dict[str, bool]:
-    """下载指定的模型"""
-    results = {}
-    name_to_model = {m.name: m for m in MODELS}
+def check_huggingface_hub() -> bool:
+    """检查 huggingface_hub 是否可用"""
+    try:
+        import huggingface_hub  # noqa: F401
+        return True
+    except ImportError:
+        return False
 
-    for name in model_names:
-        if name in name_to_model:
-            results[name] = download_model(name_to_model[name], models_dir, token)
-        else:
-            print(f"⚠️  未知模型: {name}")
-            results[name] = False
-    return results
+
+def check_huggingface_cli() -> bool:
+    """检查 huggingface-cli 是否可用"""
+    try:
+        subprocess.run(
+            ["huggingface-cli", "--version"],
+            capture_output=True,
+            check=True,
+        )
+        return True
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return False
 
 
 # ============================================================
 # 检查和报告
 # ============================================================
+
+def list_models(models_dir: Path) -> None:
+    """列出所有可用模型"""
+    print("\n📦 One-Research 可用模型\n")
+
+    for model in MODELS:
+        print(format_model_info(model, models_dir))
+        print()
+
 
 def check_models(models_dir: Path) -> None:
     """检查已下载的模型状态"""
@@ -325,15 +334,6 @@ def check_models(models_dir: Path) -> None:
     else:
         print("⚠️  部分模型未下载，流水线可能无法正常工作。")
         print("   运行 'one-report-prepare-models --all' 下载所有模型。")
-
-
-def list_models(models_dir: Path) -> None:
-    """列出所有可用模型"""
-    print("\n📦 One-Research 可用模型\n")
-
-    for model in MODELS:
-        print(format_model_info(model, models_dir))
-        print()
 
 
 # ============================================================
