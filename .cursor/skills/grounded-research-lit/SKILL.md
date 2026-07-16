@@ -47,7 +47,8 @@ source config/research_pipeline.env
 
 | Variable                     | Values                         | Meaning                                                 |
 | ---------------------------- | ------------------------------ | ------------------------------------------------------- |
-| `SEARCH_BACKEND`             | `auto` / `external` / `cursor` | Select research backend                                 |
+| `SEARCH_BACKEND`             | `auto` / `external` / `tavily` / `cursor` | Select research backend                                 |
+| `TAVILY_API_KEY`             | string                         | API key for Tavily search backend (required when `SEARCH_BACKEND=tavily`) |
 | `REQUIRE_OPEN_LINK`          | `true` / `false`               | Whether links must be opened and read                   |
 | `DOWNLOAD_OPENED_LITERATURE` | `true` / `false`               | Whether opened research literature should be downloaded |
 | `DOWNLOAD_DIR`               | path                           | Download root directory                                 |
@@ -59,12 +60,16 @@ source config/research_pipeline.env
 
 ```text
 if SEARCH_BACKEND == "external":
-    use external API backend only
+    use external API backend only (BigModel)
+elif SEARCH_BACKEND == "tavily":
+    use Tavily search backend only
 elif SEARCH_BACKEND == "cursor":
     use Cursor-native research only
 else:  # auto
     if BIGMODEL_SEARCH_API_KEY exists:
-        use external API backend
+        use external API backend (BigModel)
+    elif TAVILY_API_KEY exists:
+        use Tavily search backend
     else:
         use Cursor-native research
 ```
@@ -73,7 +78,7 @@ Important:
 
 - **Cursor-native fallback is orchestration logic in this skill**
 - **Do not try to call Cursor-native search through Python**
-- `web_search_reader.py` is only for the external backend
+- `web_search_reader.py` is for the external (BigModel) and Tavily backends
 - `prepare_opened_paper_notes.py` is used for both backends
 - `download_opened_literature.py` is a local downloader / backfill helper
 - `refine_notes_from_downloaded_pdfs.py` is the PDF refinement helper used after downloads complete

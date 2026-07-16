@@ -88,6 +88,7 @@ table = [
 api = [
     "requests>=2.28.0",
     "openai>=1.0.0",
+    "tavily-python>=0.5.0",
 ]
 
 # ---------- MCP Server ----------
@@ -113,6 +114,7 @@ full = [
     "matplotlib>=3.7.0",
     "requests>=2.28.0",
     "openai>=1.0.0",
+    "tavily-python>=0.5.0",
 ]
 
 # ---------- 别名 ----------
