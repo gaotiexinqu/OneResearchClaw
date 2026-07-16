@@ -307,7 +307,7 @@ An English version is also kept in the showcase: [`en/report.pdf`](docs/showcase
 > | `output_formats`             | Required    | Final export formats. Supports `md / docx / pdf / pptx / audio`, and comma-separated combinations such as `md,pdf,pptx`. |
 > | `research_mode`              | `medium`    | Controls research depth. Supports `simple / medium / complex`. This is the core parameter affecting the number of opened papers, retrieval coverage, and token cost. |
 > | `research_requirements`      | —           | Additional research preferences, such as emphasizing technical contributions, engineering risks, benchmarks, limitations, or application scenarios. |
-> | `search_backend`             | `cursor`    | Literature retrieval backend. Supports `cursor / external / auto`. |
+> | `search_backend`             | `cursor`    | Literature retrieval backend. Supports `cursor / external / tavily / auto`. Tavily uses the [Tavily Search API](https://tavily.com) as an alternative external search provider — set `TAVILY_API_KEY` to enable. |
 > | `require_open_link`          | `true`      | Whether to require opening and reading sources instead of relying only on search result snippets. |
 > | `download_opened_literature` | `true`      | Whether to download opened literature for later verification and paper-note refinement. |
 > | `transcription_language`     | `en`        | Language hint for audio / video transcription. It only affects the ASR stage. |

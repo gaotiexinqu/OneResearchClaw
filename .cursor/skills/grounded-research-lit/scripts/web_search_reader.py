@@ -29,6 +29,11 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 import requests
 
+try:
+    from tavily import TavilyClient
+except ImportError:
+    TavilyClient = None  # type: ignore[misc,assignment]
+
 import prepare_opened_paper_notes as notes_prep
 import download_opened_literature as downloader
 
@@ -90,6 +95,13 @@ def _auth_key() -> str:
     key = os.getenv('BIGMODEL_SEARCH_API_KEY', '').strip()
     if not key:
         raise ValueError('BIGMODEL_SEARCH_API_KEY is not set')
+    return key
+
+
+def _tavily_api_key() -> str:
+    key = os.getenv('TAVILY_API_KEY', '').strip()
+    if not key:
+        raise ValueError('TAVILY_API_KEY is not set')
     return key
 
 
@@ -175,6 +187,86 @@ def _reader_api(url: str, api_key: str) -> Dict[str, Any]:
         body = resp.text.strip()
         raise RuntimeError(f'Reader API {resp.status_code} for url={url!r}: {body or '<empty body>'}')
     return resp.json()
+
+
+def _resolve_backend(configured: str) -> str:
+    """Resolve the effective backend from the SEARCH_BACKEND setting."""
+    lower = configured.strip().lower()
+    if lower == 'external':
+        return 'external'
+    if lower == 'tavily':
+        return 'tavily'
+    if lower == 'cursor':
+        return 'cursor'
+    # auto: try BigModel first, then Tavily, then Cursor-native
+    if os.getenv('BIGMODEL_SEARCH_API_KEY', '').strip():
+        return 'external'
+    if os.getenv('TAVILY_API_KEY', '').strip():
+        return 'tavily'
+    return 'cursor'
+
+
+def _get_tavily_client() -> 'TavilyClient':
+    if TavilyClient is None:
+        raise ImportError('tavily-python is not installed. Run: pip install tavily-python')
+    return TavilyClient(api_key=_tavily_api_key())
+
+
+def _tavily_search(query: str, *, count: int) -> Dict[str, Any]:
+    """Search using the Tavily Search API and return results in normalized format."""
+    client = _get_tavily_client()
+    response = client.search(
+        query=query,
+        max_results=count,
+        search_depth='advanced',
+        topic='general',
+    )
+    items: List[Dict[str, Any]] = []
+    for r in response.get('results', []):
+        items.append({
+            'title': r.get('title', ''),
+            'link': r.get('url', ''),
+            'content': r.get('content', ''),
+            'publish_date': r.get('published_date'),
+            'media': None,
+        })
+    return {'search_result': items}
+
+
+def _tavily_extract(url: str) -> Dict[str, Any]:
+    """Extract readable content from a URL using Tavily Extract API."""
+    client = _get_tavily_client()
+    response = client.extract(
+        urls=[url],
+        extract_depth='advanced',
+    )
+    results = response.get('results', [])
+    if results:
+        raw_content = results[0].get('raw_content', '') or results[0].get('text', '') or ''
+        return {'content': raw_content}
+    return {'content': ''}
+
+
+def _tavily_read_one_url(url: str) -> ReadResult:
+    """Read a URL using Tavily Extract, with HTML fallback."""
+    try:
+        extracted = _tavily_extract(url)
+        content = extracted.get('content', '').strip()
+        if content:
+            return ReadResult(True, 'tavily_extract', content[:_MAX_OPENED_CONTENT_CHARS])
+    except Exception as exc:
+        extract_err = str(exc)
+    else:
+        extract_err = None
+
+    # Fallback to plain HTML fetch
+    html = _fetch_html(url)
+    if html:
+        stripped = _strip_html(html)
+        if stripped:
+            return ReadResult(True, 'html_fallback', stripped[:_MAX_OPENED_CONTENT_CHARS], error=extract_err)
+
+    return ReadResult(False, 'none', '', error=extract_err or 'Unable to read page')
 
 
 def _extract_search_items(result: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -365,8 +457,12 @@ def _process_one_query(
     download_mode: str,
     download_executor: Optional[ThreadPoolExecutor],
     download_futures: List[Tuple[Future, Dict[str, Any]]],
+    backend: str = 'external',
 ) -> Dict[str, Any]:
-    search_result = _search_api(query_text, api_key, count=count)
+    if backend == 'tavily':
+        search_result = _tavily_search(query_text, count=count)
+    else:
+        search_result = _search_api(query_text, api_key, count=count)
     raw_items = _extract_search_items(search_result)
     normalized = [_normalize_item(x) for x in raw_items]
     open_indices = set(_candidate_indices(normalized, open_top_k, max_open_attempts)) if require_open_link else set()
@@ -400,7 +496,7 @@ def _process_one_query(
             'download_path': None,
             'download_error': None,
             'download_mode': download_mode if download_opened else 'off',
-            'backend': 'external_api',
+            'backend': 'tavily_api' if backend == 'tavily' else 'external_api',
         }
 
         if not url:
@@ -410,7 +506,7 @@ def _process_one_query(
             continue
 
         if (idx - 1) in open_indices:
-            rr = _read_one_url(url, api_key)
+            rr = _tavily_read_one_url(url) if backend == 'tavily' else _read_one_url(url, api_key)
             if rr.success:
                 entry['opened'] = True
                 entry['open_status'] = 'success'
@@ -542,6 +638,7 @@ def batch_search_read(
     query_file: str,
     api_key: str,
     *,
+    backend: str = 'external',
     count: int = 6,
     open_top_k: int = 2,
     max_open_attempts: int = _DEFAULT_MAX_OPEN_ATTEMPTS,
@@ -633,6 +730,7 @@ def batch_search_read(
                         download_mode=download_mode,
                         download_executor=download_executor,
                         download_futures=download_futures,
+                        backend=backend,
                     )
                     query_blocks.append(block)
                     total_opened += block['opened_count']
@@ -676,7 +774,7 @@ def batch_search_read(
 
     output: Dict[str, Any] = {
         'task_id': task_id,
-        'backend': 'external_api',
+        'backend': 'tavily_api' if backend == 'tavily' else 'external_api',
         'constants': {
             'SEARCH_BACKEND': os.getenv('SEARCH_BACKEND', 'auto'),
             'REQUIRE_OPEN_LINK': require_open_link,
@@ -741,9 +839,12 @@ def main(argv: Optional[List[str]] = None) -> int:
     download_mode = 'off' if not download_opened else (args.download_mode or 'background')
 
     if args.command == 'batch-search-read':
+        resolved_backend = _resolve_backend(constants['SEARCH_BACKEND'])
+        api_key = _tavily_api_key() if resolved_backend == 'tavily' else _auth_key()
         data = batch_search_read(
             query_file=args.query_file,
-            api_key=_auth_key(),
+            api_key=api_key,
+            backend=resolved_backend,
             count=args.count,
             open_top_k=open_top_k,
             max_open_attempts=args.max_open_attempts,
